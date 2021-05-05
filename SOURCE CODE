@@ -54,3 +54,4 @@ int animeAprroxCalculator(int episodes, int minutes){
 	
 	return approx_totalHours;
 }
+
