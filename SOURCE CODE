@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int animeCalculator(int, int);
+int animeAprroxCalculator(int, int);
+
+int main(){
+	
+	char title[50];
+	int eps, mins;
+	int i;
+	
+	printf("\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+    printf("\t\t +\t\t\t\t\t     +\n");
+    printf("\t\t +          ANIME SERIES CALCULATOR          +\n");
+    printf("\t\t +\t\t\t\t\t     +\n");
+    printf("\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+	
+	printf("\nTitle of Anime: ");
+	gets(title);
+	
+	printf("How many episodes: ");
+	scanf("%d", &eps);
+	
+	printf("How many minutes: ");
+	scanf("%d", &mins);
+		
+	printf("\n");
+	puts(title);
+	
+	int total_hours = animeCalculator(eps, mins);
+	printf("Total of %d mins", total_hours);
+	
+	int approx_totalHours = animeAprroxCalculator(eps, mins);
+	printf("\nApproximately %d hours without intro and outro", approx_totalHours);
+
+    return 0;
+}
+
+int animeCalculator(int ep, int min){
+	
+	int total_minutes;
+	
+	total_minutes = ep * min;
+	
+	return total_minutes;
+}
+
+int animeAprroxCalculator(int episodes, int minutes){
+	
+	int approx_minutes, approx_totalHours;
+	
+	approx_minutes = episodes * minutes;
+	approx_totalHours = approx_minutes / 60;
+	
+	return approx_totalHours;
+}
